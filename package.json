@@ -4,7 +4,7 @@
   "private": true,
   "description": "Collect everyday Sukuma sentences and recordings: Swahili prompt in, written and spoken Sukuma out.",
   "main": "app.js",
-  "scripts": { "start": "node app.js", "test": "node --test" },
+  "scripts": { "start": "node server.js", "test": "node --test" },
   "engines": { "node": ">=20" },
   "dependencies": { "express": "^4.21.2" }
 }

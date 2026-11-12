@@ -13,7 +13,7 @@ region. No names, phone numbers or IP addresses are stored.
 ```bash
 npm install
 cp .env.example .env      # set ADMIN_PASSWORD
-npm start                 # http://localhost:3000
+npm start                 # http://localhost:3000 (runs server.js)
 npm test
 ```
 
