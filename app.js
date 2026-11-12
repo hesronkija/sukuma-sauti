@@ -166,14 +166,69 @@ function admin(req, res, next) {
 }
 
 const csvCell = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
-app.get('/admin/recordings.csv', limit(600), admin, (req, res) => {
+function recordingsCsv() {
   const head = ['file', 'transcript', 'swahili', 'speaker', 'gender', 'age_group', 'region', 'district', 'prompt', 'seconds', 'time'];
   const rows = readJsonl(SUBMISSIONS).filter((r) => !r.skipped).map((r) => {
     const s = speakers.get(r.speaker) || {};
-    return [r.audio || '', r.sukuma, r.sw, r.speaker, s.gender, s.age_group, s.region, s.district, r.prompt, r.seconds || '', r.time];
+    return [r.audio ? `audio/${r.audio}` : '', r.sukuma, r.sw, r.speaker, s.gender, s.age_group, s.region, s.district, r.prompt, r.seconds || '', r.time];
   });
-  res.type('text/csv; charset=utf-8').set('Content-Disposition', 'attachment; filename="recordings.csv"')
-    .send('﻿' + [head, ...rows].map((r) => r.map(csvCell).join(',')).join('\n') + '\n');
+  return '﻿' + [head, ...rows].map((r) => r.map(csvCell).join(',')).join('\n') + '\n';
+}
+app.get('/admin/recordings.csv', limit(600), admin, (req, res) => {
+  res.type('text/csv; charset=utf-8').set('Content-Disposition', 'attachment; filename="recordings.csv"').send(recordingsCsv());
+});
+
+// Everything in one file: recordings.csv plus audio/<file> for every recording.
+// A plain stored (uncompressed) zip: phone audio is already compressed, and this
+// needs no zip program on the server. One audio file is in memory at a time.
+app.get('/admin/export.zip', limit(60), admin, async (req, res) => {
+  const { crc32 } = require('node:zlib');
+  const name = `kisukuma-${new Date().toISOString().slice(0, 10)}.zip`;
+  res.set({ 'Content-Type': 'application/zip', 'Content-Disposition': `attachment; filename="${name}"` });
+  const entries = [];
+  let offset = 0;
+  const write = (buf) => new Promise((ok) => { offset += buf.length; res.write(buf) ? ok() : res.once('drain', ok); });
+  const dos = (d) => [((d.getHours() << 11) | (d.getMinutes() << 5) | (d.getSeconds() >> 1)) & 0xffff,
+    (((d.getFullYear() - 1980) << 9) | ((d.getMonth() + 1) << 5) | d.getDate()) & 0xffff];
+  async function add(path_, data, when) {
+    const fname = Buffer.from(path_, 'utf8');
+    const crc = crc32(data);
+    const [time, date] = dos(when);
+    const local = Buffer.alloc(30);
+    local.writeUInt32LE(0x04034b50, 0); local.writeUInt16LE(20, 4); local.writeUInt16LE(0x0800, 6);
+    local.writeUInt16LE(0, 8); local.writeUInt16LE(time, 10); local.writeUInt16LE(date, 12);
+    local.writeUInt32LE(crc, 14); local.writeUInt32LE(data.length, 18); local.writeUInt32LE(data.length, 22);
+    local.writeUInt16LE(fname.length, 26); local.writeUInt16LE(0, 28);
+    entries.push({ fname, crc, size: data.length, time, date, at: offset });
+    await write(local); await write(fname); await write(data);
+  }
+  try {
+    const now = new Date();
+    await add('recordings.csv', Buffer.from(recordingsCsv(), 'utf8'), now);
+    for (const r of readJsonl(SUBMISSIONS)) {
+      if (r.skipped || !r.audio || !/^[\w.-]+$/.test(r.audio)) continue;
+      const file = path.join(AUDIO_DIR, r.audio);
+      if (!fs.existsSync(file)) continue;
+      await add(`audio/${r.audio}`, fs.readFileSync(file), fs.statSync(file).mtime);
+    }
+    const start = offset;
+    for (const e of entries) {
+      const c = Buffer.alloc(46);
+      c.writeUInt32LE(0x02014b50, 0); c.writeUInt16LE(20, 4); c.writeUInt16LE(20, 6); c.writeUInt16LE(0x0800, 8);
+      c.writeUInt16LE(0, 10); c.writeUInt16LE(e.time, 12); c.writeUInt16LE(e.date, 14); c.writeUInt32LE(e.crc, 16);
+      c.writeUInt32LE(e.size, 20); c.writeUInt32LE(e.size, 24); c.writeUInt16LE(e.fname.length, 28);
+      c.writeUInt32LE(e.at, 42);
+      await write(c); await write(e.fname);
+    }
+    const end = Buffer.alloc(22);
+    end.writeUInt32LE(0x06054b50, 0); end.writeUInt16LE(entries.length, 8); end.writeUInt16LE(entries.length, 10);
+    end.writeUInt32LE(offset - start, 12); end.writeUInt32LE(start, 16);
+    await write(end);
+    res.end();
+  } catch (err) {
+    console.error('export failed', err);
+    res.destroy(err);
+  }
 });
 app.get('/admin/audio/:file', limit(5000), admin, (req, res) => {
   if (!/^spk-[a-f0-9]{10}_[\w-]+_\d+\.(webm|m4a|ogg|wav)$/.test(req.params.file)) return res.sendStatus(400);
@@ -187,7 +242,7 @@ app.get('/admin', limit(600), admin, (req, res) => {
   res.send(`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sukuma admin</title>
 <link rel="stylesheet" href="/style.css?v=1"><main class="admin"><h1>Collected so far</h1>
 <p><b>${speakers.size}</b> speakers · <b>${subs.length}</b> sentences · <b>${subs.filter((r) => r.audio).length}</b> with audio · <b>${(secs / 60).toFixed(1)}</b> minutes of speech</p>
-<p><a href="/admin/recordings.csv">Download recordings.csv</a> (audio files are in the data folder on the server)</p>
+<p><a href="/admin/export.zip"><b>Download everything (.zip)</b></a>: recordings.csv plus every audio file, ready for the toolkit. Or <a href="/admin/recordings.csv">just the CSV</a>.</p>
 <table><thead><tr><th>Time (UTC)</th><th>Speaker</th><th>Swahili</th><th>Sukuma</th><th>Audio</th></tr></thead><tbody>${last}</tbody></table></main></html>`);
 });
 

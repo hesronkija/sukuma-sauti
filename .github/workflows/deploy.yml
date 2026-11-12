@@ -1,0 +1,56 @@
+# Push to main -> run the tests -> update the live site on Namecheap -> check it answers.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm test
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up SSH
+        env:
+          NC_SSH_KEY: ${{ secrets.NC_SSH_KEY }}
+          NC_HOST: ${{ secrets.NC_HOST }}
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$NC_SSH_KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          ssh-keyscan -p 21098 -H "$NC_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Update the server
+        env:
+          NC_HOST: ${{ secrets.NC_HOST }}
+          NC_USER: ${{ secrets.NC_USER }}
+          NC_APP_DIR: ${{ secrets.NC_APP_DIR }}
+        run: |
+          ssh -i ~/.ssh/deploy -p 21098 "$NC_USER@$NC_HOST" \
+            "set -e; cd '$NC_APP_DIR'; OLD=\$(git rev-parse HEAD); git fetch --quiet origin main; git reset --hard '${{ github.sha }}'; bash deploy.sh \"\$OLD\""
+
+      - name: Check the live site
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          for i in $(seq 1 12); do
+            if curl -fsS "$SITE_URL/health" | grep -q '"ok":true' && curl -fsS -o /dev/null "$SITE_URL/"; then
+              echo "Live site is healthy"; exit 0
+            fi
+            sleep 5
+          done
+          echo "Live site did not answer after the deploy"; exit 1

@@ -44,8 +44,22 @@ test('full flow: speaker, prompt, submit with audio, skip, export', async () => 
   const row = csv.trim().split('\n')[1];
   assert.match(row, /"minzi"/);
   assert.match(row, /"Female","26-35","Mwanza","<b>Magu<\/b>"/);
-  const file = row.split(',')[0].replace(/"/g, '');
+  const file = row.split(',')[0].replace(/"/g, '').replace(/^audio\//, '');
   assert.strictEqual(await (await fetch(`${base}/admin/audio/${file}`, auth)).text(), 'fake-webm-bytes');
+
+  // The zip holds the CSV and the audio, and a real unzip tool accepts it.
+  assert.strictEqual((await fetch(base + '/admin/export.zip')).status, 401);
+  const zip = Buffer.from(await (await fetch(base + '/admin/export.zip', auth)).arrayBuffer());
+  assert.strictEqual(zip.readUInt32LE(0), 0x04034b50);
+  assert.strictEqual(zip.readUInt16LE(zip.length - 12), 2); // recordings.csv + one audio file
+  const zpath = path.join(dir, 'export.zip');
+  fs.writeFileSync(zpath, zip);
+  const { execFileSync } = require('node:child_process');
+  try {
+    execFileSync('unzip', ['-tq', zpath]);
+    assert.strictEqual(execFileSync('unzip', ['-p', zpath, `audio/${file}`]).toString(), 'fake-webm-bytes');
+    assert.match(execFileSync('unzip', ['-p', zpath, 'recordings.csv']).toString(), /"minzi"/);
+  } catch (e) { if (e.code !== 'ENOENT') throw e; } // no unzip installed: the byte checks above still ran
   assert.strictEqual((await fetch(`${base}/admin/audio/..%2F..%2Fapp.js`, auth)).status, 400);
   const page = await (await fetch(base + '/admin', auth)).text();
   assert.ok(page.includes('1</b> sentences') && !page.includes('<b>Magu'));

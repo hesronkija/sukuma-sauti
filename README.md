@@ -48,3 +48,14 @@ the file with a new unique `id`.
 - Confirm with your faculty mentor whether collecting recordings needs IRB review.
 - Set `CONTACT_EMAIL` so speakers can ask for their recordings to be deleted.
 - Have a Sukuma speaker read through the consent text and try the flow on a phone.
+
+## Deploying
+
+Pushing to `main` deploys automatically (`.github/workflows/deploy.yml`): GitHub runs the
+tests, connects to the Namecheap server over SSH, moves `~/sukuma-sauti` to the new commit
+and runs `deploy.sh`. That script refuses a broken commit (merge-conflict markers, syntax
+errors, invalid `prompts.json`) by rolling back to the previous version, installs packages
+only when `package.json` changed, and restarts the app. The workflow then checks `/health`.
+
+Repository settings it needs: secrets `NC_HOST`, `NC_USER`, `NC_SSH_KEY`, `NC_APP_DIR`, and
+the variable `SITE_URL`. The data folder and `.env` on the server are never touched.
