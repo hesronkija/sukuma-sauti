@@ -7,7 +7,8 @@ set -uo pipefail
 cd "$(dirname "$0")"
 OLD="${1:-}"
 APP_ROOT="sukuma-sauti"
-source "$HOME/nodevenv/$APP_ROOT/24/bin/activate"
+# cPanel's activate script reads variables it never sets, so relax -u while loading it.
+set +u; source "$HOME/nodevenv/$APP_ROOT/24/bin/activate"; set -u
 
 rollback() {
   echo "DEPLOY REFUSED: $1"
