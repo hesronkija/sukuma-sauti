@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="sw">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sauti ya Kisukuma</title>
+  <meta name="description"
+    content="Saidia kompyuta kuelewa Kisukuma cha kila siku: andika na usome sentensi fupi kwa Kisukuma.">
+  <meta name="theme-color" content="#f6f1e7">
+  <link rel="icon" href="/icon.svg?v=1" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css?v=1">
+</head>
+
+<body>
+  <header class="top">
+    <a class="brand" href="/"><img src="/icon.svg?v=1" alt="" width="28" height="28"> Sauti ya Kisukuma</a>
+    <span id="progress" class="progress" hidden></span>
+  </header>
+
+  <main id="main">
+    <noscript>
+      <p class="card">Tovuti hii inahitaji JavaScript ili kurekodi sauti. Tafadhali iwashe kwenye kivinjari chako.</p>
+    </noscript>
+
+    <!-- 1. Welcome and consent -->
+    <section id="view-welcome" class="view" hidden>
+      <h1>Saidia kompyuta kuelewa Kisukuma</h1>
+      <p class="lead">Utaona sentensi fupi ya Kiswahili. Iandike kwa Kisukuma, kisha isome kwa sauti. Dakika tano
+        zinatosha, na unaweza kuacha wakati wowote, ikikupendeza unaweza kurudi baadaye ili kumalizia zoezi.</p>
+      <ol class="steps">
+        <li><b>Soma</b> sentensi ya Kiswahili.</li>
+        <li><b>Andika</b> maana yake kwa Kisukuma, jinsi unavyoongea nyumbani.</li>
+        <li><b>Rekodi</b> sauti yako ukiisoma kwa Kisukuma.</li>
+      </ol>
+      <div class="card">
+        <h2>Kabla ya kuanza</h2>
+        <p>Huu ni mradi wa utafiti wa mwanafunzi wa chuo kikuu cha BYU-Idaho. Maandishi na sauti zinazokusanywa
+          zitatumika kufundisha na kupima programu za kutambua na kutafsiri Kisukuma.</p>
+        <ul class="plain">
+          <li>Hatuulizi jina lako. Utapewa namba ya mshiriki tu.</li>
+          <li>Maandishi na sauti yako vinaweza kutolewa wazi kwa watafiti wote kwa leseni ya CC BY 4.0. Sauti yako
+            inaweza kutambuliwa na watu wanaokufahamu.</li>
+          <li>Unaweza kuomba rekodi zako zifutwe kwa kutuma namba yako ya mshiriki<span id="contact-line"></span>.</li>
+        </ul>
+        <form id="consent-form">
+          <label class="check"><input type="checkbox" id="c-adult" required> <span>Nina umri wa miaka 18 au
+              zaidi.</span></label>
+          <label class="check"><input type="checkbox" id="c-consent" required> <span>Nimeelewa maelezo haya na
+              ninakubali kushiriki.</span></label>
+          <button class="btn primary" type="submit">Ninakubali, tuanze</button>
+        </form>
+        <p class="small" lang="en">English: you will translate short Swahili sentences into Sukuma and record yourself
+          reading them. No names are collected. Text and audio may be released openly (CC BY 4.0) for research.</p>
+      </div>
+    </section>
+
+    <!-- 2. About you (all optional) -->
+    <section id="view-about" class="view" hidden>
+      <h1>Kuhusu wewe</h1>
+      <p class="lead">Maswali haya si ya lazima. Yanatusaidia kujua kama tuna sauti za watu wa aina mbalimbali.</p>
+      <form id="about-form" class="card">
+        <label for="gender">Jinsia</label>
+        <select id="gender">
+          <option value="">Sitaki ijulikane</option>
+          <option value="Female">Mwanamke</option>
+          <option value="Male">Mwanamume</option>
+        </select>
+        <label for="age">Umri</label>
+        <select id="age">
+          <option value="">Sitaki ujulikane</option>
+          <option>18-25</option>
+          <option>26-35</option>
+          <option>36-50</option>
+          <option>51-65</option>
+          <option>65+</option>
+        </select>
+        <label for="region">Mkoa ulikokulia</label>
+        <select id="region">
+          <option value="">Sitaki ujulikane</option>
+          <option>Mwanza</option>
+          <option>Shinyanga</option>
+          <option>Simiyu</option>
+          <option>Geita</option>
+          <option>Tabora</option>
+          <option value="Other">Mwingine</option>
+        </select>
+        <label for="district">Wilaya <span class="opt">(si lazima)</span></label>
+        <input id="district" type="text" maxlength="40" autocomplete="off">
+        <button class="btn primary" type="submit">Endelea</button>
+      </form>
+    </section>
+
+    <!-- 3. The task -->
+    <section id="view-task" class="view" hidden>
+      <p class="label" id="prompt-kind">Sentensi ya Kiswahili</p>
+      <p class="prompt" id="prompt-text" lang="sw"></p>
+
+      <form id="task-form" novalidate>
+        <label for="sukuma">Andika kwa Kisukuma</label>
+        <textarea id="sukuma" rows="3" maxlength="600" lang="suk" autocapitalize="sentences" autocomplete="off"
+          autocorrect="off" spellcheck="false" placeholder="Andika hapa"></textarea>
+        <p class="hint">Andika jinsi unavyoongea nyumbani. Hakuna jibu baya.</p>
+
+        <p class="label" id="rec-label">Isome kwa sauti kwa Kisukuma</p>
+        <div class="recorder" role="group" aria-labelledby="rec-label">
+          <button type="button" id="rec-btn" class="btn record" aria-pressed="false"><span class="dot"
+              aria-hidden="true"></span><span id="rec-btn-text">Rekodi</span></button>
+          <span id="rec-time" class="time" aria-live="off">0:00</span>
+          <audio id="rec-play" controls hidden></audio>
+        </div>
+        <p id="rec-status" class="hint" role="status" aria-live="polite"></p>
+
+        <p id="form-error" class="error" role="alert" hidden></p>
+        <div class="actions">
+          <button class="btn primary" type="submit" id="send-btn">Tuma</button>
+          <button class="btn ghost" type="button" id="skip-btn">Ruka</button>
+        </div>
+      </form>
+      <p class="small">Namba yako ya mshiriki: <code id="speaker-code"></code></p>
+    </section>
+
+    <!-- 4. Finished everything -->
+    <section id="view-done" class="view" hidden>
+      <h1>Asante sana!</h1>
+      <p class="lead">Umemaliza sentensi zote. Mchango wako utasaidia Kisukuma kusikika kwenye teknolojia.</p>
+      <p>Tafadhali mtumie rafiki au ndugu anayeongea Kisukuma kiungo cha tovuti hii.</p>
+      <p class="small">Namba yako ya mshiriki: <code id="speaker-code-done"></code></p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Mradi wa utafiti wa sukuma-toolkit · <a href="https://github.com/hesronkija/sukuma-toolkit"
+        rel="noopener">GitHub</a></p>
+  </footer>
+  <script src="/app.js?v=1" defer></script>
+</body>
+
+</html>

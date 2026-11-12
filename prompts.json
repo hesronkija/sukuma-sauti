@@ -1,0 +1,1334 @@
+[
+ {
+  "id": "s-salamu-01",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Habari za asubuhi?"
+ },
+ {
+  "id": "s-salamu-02",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Umeamkaje leo?"
+ },
+ {
+  "id": "s-salamu-03",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Hujambo, habari za nyumbani?"
+ },
+ {
+  "id": "s-salamu-04",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Karibu nyumbani kwetu."
+ },
+ {
+  "id": "s-salamu-05",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Asante sana kwa msaada wako."
+ },
+ {
+  "id": "s-salamu-06",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Samahani, nimechelewa."
+ },
+ {
+  "id": "s-salamu-07",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Tutaonana kesho asubuhi."
+ },
+ {
+  "id": "s-salamu-08",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Usiku mwema, lala salama."
+ },
+ {
+  "id": "s-salamu-09",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Jina lako ni nani?"
+ },
+ {
+  "id": "s-salamu-10",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Unatoka wapi?"
+ },
+ {
+  "id": "s-salamu-11",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Ninafurahi kukuona tena."
+ },
+ {
+  "id": "s-salamu-12",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Shikamoo bibi, habari za siku nyingi?"
+ },
+ {
+  "id": "s-salamu-13",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Wasalimie watu wote nyumbani."
+ },
+ {
+  "id": "s-salamu-14",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Safari njema, Mungu akulinde."
+ },
+ {
+  "id": "s-salamu-15",
+  "type": "sentence",
+  "topic": "salamu",
+  "sw": "Pole kwa kazi."
+ },
+ {
+  "id": "s-familia-01",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Mama yangu anapika chakula jikoni."
+ },
+ {
+  "id": "s-familia-02",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Baba amekwenda shambani tangu asubuhi."
+ },
+ {
+  "id": "s-familia-03",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Nina kaka wawili na dada mmoja."
+ },
+ {
+  "id": "s-familia-04",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Bibi yangu anatusimulia hadithi kila jioni."
+ },
+ {
+  "id": "s-familia-05",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Watoto wanacheza nje ya nyumba."
+ },
+ {
+  "id": "s-familia-06",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Mtoto analia kwa sababu ana njaa."
+ },
+ {
+  "id": "s-familia-07",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Shangazi yangu anaishi Mwanza."
+ },
+ {
+  "id": "s-familia-08",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Dada yangu ataolewa mwezi ujao."
+ },
+ {
+  "id": "s-familia-09",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Babu yangu ana ng'ombe wengi."
+ },
+ {
+  "id": "s-familia-10",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Tunaishi pamoja na wazazi wetu."
+ },
+ {
+  "id": "s-familia-11",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Mdogo wangu anasoma darasa la tano."
+ },
+ {
+  "id": "s-familia-12",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Wageni watafika leo jioni."
+ },
+ {
+  "id": "s-familia-13",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Mjomba wangu ni mwalimu."
+ },
+ {
+  "id": "s-familia-14",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Tulizaliwa kijiji kimoja."
+ },
+ {
+  "id": "s-familia-15",
+  "type": "sentence",
+  "topic": "familia",
+  "sw": "Familia yetu ni kubwa."
+ },
+ {
+  "id": "s-chakula-01",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Leo tutakula ugali na samaki."
+ },
+ {
+  "id": "s-chakula-02",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Naomba maji ya kunywa."
+ },
+ {
+  "id": "s-chakula-03",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Chakula kiko tayari, njooni tule."
+ },
+ {
+  "id": "s-chakula-04",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Sijala chochote tangu asubuhi."
+ },
+ {
+  "id": "s-chakula-05",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Wali huu ni mtamu sana."
+ },
+ {
+  "id": "s-chakula-06",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Ongeza chumvi kidogo kwenye mboga."
+ },
+ {
+  "id": "s-chakula-07",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Tunakunywa chai kila asubuhi."
+ },
+ {
+  "id": "s-chakula-08",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Mama anatwanga mahindi."
+ },
+ {
+  "id": "s-chakula-09",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Nimeshiba, asante."
+ },
+ {
+  "id": "s-chakula-10",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Unapenda kula nini?"
+ },
+ {
+  "id": "s-chakula-11",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Tutachinja kuku kwa ajili ya wageni."
+ },
+ {
+  "id": "s-chakula-12",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Maziwa haya ni ya leo."
+ },
+ {
+  "id": "s-chakula-13",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Osha mikono kabla ya kula."
+ },
+ {
+  "id": "s-chakula-14",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Moto umezimika, washa tena."
+ },
+ {
+  "id": "s-chakula-15",
+  "type": "sentence",
+  "topic": "chakula",
+  "sw": "Viazi vitamu vimeiva."
+ },
+ {
+  "id": "s-sokoni-01",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Nyanya hizi ni shilingi ngapi?"
+ },
+ {
+  "id": "s-sokoni-02",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Bei hii ni kubwa mno, nipunguzie."
+ },
+ {
+  "id": "s-sokoni-03",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Ninataka kununua kilo mbili za mchele."
+ },
+ {
+  "id": "s-sokoni-04",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Soko linafunguliwa asubuhi na mapema."
+ },
+ {
+  "id": "s-sokoni-05",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Sina pesa za kutosha leo."
+ },
+ {
+  "id": "s-sokoni-06",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Nipe chenji yangu tafadhali."
+ },
+ {
+  "id": "s-sokoni-07",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Samaki hawa ni wabichi?"
+ },
+ {
+  "id": "s-sokoni-08",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Nitarudi kesho kununua tena."
+ },
+ {
+  "id": "s-sokoni-09",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Anauza mboga sokoni kila siku."
+ },
+ {
+  "id": "s-sokoni-10",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Duka limefungwa leo."
+ },
+ {
+  "id": "s-sokoni-11",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Nimenunua nguo mpya za watoto."
+ },
+ {
+  "id": "s-sokoni-12",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Mahindi yamepanda bei mwaka huu."
+ },
+ {
+  "id": "s-sokoni-13",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Unauza nini?"
+ },
+ {
+  "id": "s-sokoni-14",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Nipimie sukari nusu kilo."
+ },
+ {
+  "id": "s-sokoni-15",
+  "type": "sentence",
+  "topic": "sokoni",
+  "sw": "Biashara ikoje siku hizi?"
+ },
+ {
+  "id": "s-kilimo-01",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Mvua imeanza kunyesha, tuanze kupanda."
+ },
+ {
+  "id": "s-kilimo-02",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Tunalima pamba na mahindi."
+ },
+ {
+  "id": "s-kilimo-03",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Ng'ombe wamekwenda kunywa maji mtoni."
+ },
+ {
+  "id": "s-kilimo-04",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Mavuno ya mwaka huu ni mazuri."
+ },
+ {
+  "id": "s-kilimo-05",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Jembe langu limevunjika."
+ },
+ {
+  "id": "s-kilimo-06",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Mbuzi wameingia shambani."
+ },
+ {
+  "id": "s-kilimo-07",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Tunahitaji mbolea kwa ajili ya shamba."
+ },
+ {
+  "id": "s-kilimo-08",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Mpunga uko tayari kuvunwa."
+ },
+ {
+  "id": "s-kilimo-09",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Kijana anachunga ng'ombe porini."
+ },
+ {
+  "id": "s-kilimo-10",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Jua kali limekausha mazao."
+ },
+ {
+  "id": "s-kilimo-11",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Tutapalilia shamba kesho."
+ },
+ {
+  "id": "s-kilimo-12",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Kuku wametaga mayai mengi."
+ },
+ {
+  "id": "s-kilimo-13",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Shamba letu liko mbali na nyumbani."
+ },
+ {
+  "id": "s-kilimo-14",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Ndege wanakula mtama."
+ },
+ {
+  "id": "s-kilimo-15",
+  "type": "sentence",
+  "topic": "kilimo",
+  "sw": "Tumeuza ng'ombe wawili mnadani."
+ },
+ {
+  "id": "s-afya-01",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Ninaumwa kichwa tangu jana."
+ },
+ {
+  "id": "s-afya-02",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Mtoto ana homa kali."
+ },
+ {
+  "id": "s-afya-03",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Twende hospitali sasa hivi."
+ },
+ {
+  "id": "s-afya-04",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Daktari amenipa dawa."
+ },
+ {
+  "id": "s-afya-05",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Meza dawa hii mara tatu kwa siku."
+ },
+ {
+  "id": "s-afya-06",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Unajisikiaje leo?"
+ },
+ {
+  "id": "s-afya-07",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Nimepona, sasa ninaendelea vizuri."
+ },
+ {
+  "id": "s-afya-08",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Tumbo linaniuma."
+ },
+ {
+  "id": "s-afya-09",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Kunywa maji mengi."
+ },
+ {
+  "id": "s-afya-10",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Zahanati iko karibu na shule."
+ },
+ {
+  "id": "s-afya-11",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Ameumia mguu akicheza mpira."
+ },
+ {
+  "id": "s-afya-12",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Mama mjamzito anahitaji kupumzika."
+ },
+ {
+  "id": "s-afya-13",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Nimechoka sana leo."
+ },
+ {
+  "id": "s-afya-14",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Usisahau kulala ndani ya chandarua."
+ },
+ {
+  "id": "s-afya-15",
+  "type": "sentence",
+  "topic": "afya",
+  "sw": "Jino linaniuma, siwezi kula."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-01",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Leo kuna jua kali."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-02",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Mvua itanyesha jioni."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-03",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Kuna baridi asubuhi ya leo."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-04",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Upepo unavuma kwa nguvu."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-05",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Sasa ni saa ngapi?"
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-06",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Tutaondoka saa mbili asubuhi."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-07",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Jana nilichelewa kuamka."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-08",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Wiki ijayo tutasafiri."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-09",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Mwaka jana mvua ilikuwa chache."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-10",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Kumekucha, amka."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-11",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Giza limeingia, turudi nyumbani."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-12",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Leo ni siku ya soko."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-13",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Nitakuja kesho kutwa."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-14",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Mwezi unang'aa usiku wa leo."
+ },
+ {
+  "id": "s-hali_ya_hewa_na_muda-15",
+  "type": "sentence",
+  "topic": "hali_ya_hewa_na_muda",
+  "sw": "Kiangazi kimeanza."
+ },
+ {
+  "id": "s-safari-01",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Basi la Mwanza linaondoka saa ngapi?"
+ },
+ {
+  "id": "s-safari-02",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Nauli ni shilingi ngapi?"
+ },
+ {
+  "id": "s-safari-03",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Shuka hapa, tumefika."
+ },
+ {
+  "id": "s-safari-04",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Njia ya kwenda sokoni ni ipi?"
+ },
+ {
+  "id": "s-safari-05",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Nenda moja kwa moja kisha pinda kushoto."
+ },
+ {
+  "id": "s-safari-06",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Nyumba yetu iko karibu na kanisa."
+ },
+ {
+  "id": "s-safari-07",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Barabara hii imeharibika."
+ },
+ {
+  "id": "s-safari-08",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Nitakwenda kwa miguu."
+ },
+ {
+  "id": "s-safari-09",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Pikipiki yangu imeharibika."
+ },
+ {
+  "id": "s-safari-10",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Ziwa liko mbali kutoka hapa?"
+ },
+ {
+  "id": "s-safari-11",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Tumepotea njia."
+ },
+ {
+  "id": "s-safari-12",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Nisubiri kituoni."
+ },
+ {
+  "id": "s-safari-13",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Tutavuka mto kwa mtumbwi."
+ },
+ {
+  "id": "s-safari-14",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Safari ilikuwa ndefu sana."
+ },
+ {
+  "id": "s-safari-15",
+  "type": "sentence",
+  "topic": "safari",
+  "sw": "Umefika salama?"
+ },
+ {
+  "id": "s-shule_na_kazi-01",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Watoto wamekwenda shule."
+ },
+ {
+  "id": "s-shule_na_kazi-02",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Mwalimu anafundisha hesabu."
+ },
+ {
+  "id": "s-shule_na_kazi-03",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Nimesahau daftari langu nyumbani."
+ },
+ {
+  "id": "s-shule_na_kazi-04",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Mtihani utaanza wiki ijayo."
+ },
+ {
+  "id": "s-shule_na_kazi-05",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Soma kwa bidii."
+ },
+ {
+  "id": "s-shule_na_kazi-06",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Unafanya kazi gani?"
+ },
+ {
+  "id": "s-shule_na_kazi-07",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Ninafanya kazi ya ufundi."
+ },
+ {
+  "id": "s-shule_na_kazi-08",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Leo sitakwenda kazini."
+ },
+ {
+  "id": "s-shule_na_kazi-09",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Tumemaliza kazi mapema."
+ },
+ {
+  "id": "s-shule_na_kazi-10",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Kalamu yangu imepotea."
+ },
+ {
+  "id": "s-shule_na_kazi-11",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Anajifunza kusoma na kuandika."
+ },
+ {
+  "id": "s-shule_na_kazi-12",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Kazi hii ni ngumu."
+ },
+ {
+  "id": "s-shule_na_kazi-13",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Tutakutana kwenye mkutano wa kijiji."
+ },
+ {
+  "id": "s-shule_na_kazi-14",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Mshahara umechelewa mwezi huu."
+ },
+ {
+  "id": "s-shule_na_kazi-15",
+  "type": "sentence",
+  "topic": "shule_na_kazi",
+  "sw": "Amefaulu mtihani wake."
+ },
+ {
+  "id": "s-simu_na_pesa-01",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Nipigie simu baadaye."
+ },
+ {
+  "id": "s-simu_na_pesa-02",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Simu yangu haina chaji."
+ },
+ {
+  "id": "s-simu_na_pesa-03",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Sina salio la kutosha."
+ },
+ {
+  "id": "s-simu_na_pesa-04",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Nitumie pesa kwa simu."
+ },
+ {
+  "id": "s-simu_na_pesa-05",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Nimepokea ujumbe wako."
+ },
+ {
+  "id": "s-simu_na_pesa-06",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Mtandao haupatikani hapa."
+ },
+ {
+  "id": "s-simu_na_pesa-07",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Namba yako ya simu ni ipi?"
+ },
+ {
+  "id": "s-simu_na_pesa-08",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Nitakupigia jioni."
+ },
+ {
+  "id": "s-simu_na_pesa-09",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Umeme umekatika."
+ },
+ {
+  "id": "s-simu_na_pesa-10",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Nikopeshe shilingi elfu tano."
+ },
+ {
+  "id": "s-simu_na_pesa-11",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Nitakulipa mwisho wa mwezi."
+ },
+ {
+  "id": "s-simu_na_pesa-12",
+  "type": "sentence",
+  "topic": "simu_na_pesa",
+  "sw": "Washa redio tusikilize habari."
+ },
+ {
+  "id": "s-nyumbani-01",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Fungua mlango."
+ },
+ {
+  "id": "s-nyumbani-02",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Funga dirisha, kuna baridi."
+ },
+ {
+  "id": "s-nyumbani-03",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Nenda ukachote maji kisimani."
+ },
+ {
+  "id": "s-nyumbani-04",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Fagia uwanja."
+ },
+ {
+  "id": "s-nyumbani-05",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Nguo zimekauka, zianue."
+ },
+ {
+  "id": "s-nyumbani-06",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Leta kiti hapa."
+ },
+ {
+  "id": "s-nyumbani-07",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Kaa chini upumzike."
+ },
+ {
+  "id": "s-nyumbani-08",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Unatafuta nini?"
+ },
+ {
+  "id": "s-nyumbani-09",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Sijui alikokwenda."
+ },
+ {
+  "id": "s-nyumbani-10",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Nisaidie kubeba mzigo huu."
+ },
+ {
+  "id": "s-nyumbani-11",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Usifanye kelele, mtoto amelala."
+ },
+ {
+  "id": "s-nyumbani-12",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Njoo hapa haraka."
+ },
+ {
+  "id": "s-nyumbani-13",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Ngoja kidogo, ninakuja."
+ },
+ {
+  "id": "s-nyumbani-14",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Unasema nini? Sijasikia."
+ },
+ {
+  "id": "s-nyumbani-15",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Sema polepole tafadhali."
+ },
+ {
+  "id": "s-nyumbani-16",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Ninakupenda sana."
+ },
+ {
+  "id": "s-nyumbani-17",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Nina furaha leo."
+ },
+ {
+  "id": "s-nyumbani-18",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Usiogope."
+ },
+ {
+  "id": "s-nyumbani-19",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Kuna harusi kijijini kesho."
+ },
+ {
+  "id": "s-nyumbani-20",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Tutacheza ngoma usiku."
+ },
+ {
+  "id": "s-nyumbani-21",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Kuna msiba kwa jirani yetu."
+ },
+ {
+  "id": "s-nyumbani-22",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Tutakwenda kanisani Jumapili."
+ },
+ {
+  "id": "s-nyumbani-23",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Mbwa anabweka nje."
+ },
+ {
+  "id": "s-nyumbani-24",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Nimepoteza ufunguo."
+ },
+ {
+  "id": "s-nyumbani-25",
+  "type": "sentence",
+  "topic": "nyumbani",
+  "sw": "Maji ya kuoga yako tayari."
+ },
+ {
+  "id": "w-01",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "maji"
+ },
+ {
+  "id": "w-02",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "chakula"
+ },
+ {
+  "id": "w-03",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "nyumba"
+ },
+ {
+  "id": "w-04",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "mtoto"
+ },
+ {
+  "id": "w-05",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "mama"
+ },
+ {
+  "id": "w-06",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "baba"
+ },
+ {
+  "id": "w-07",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "ng'ombe"
+ },
+ {
+  "id": "w-08",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "mbuzi"
+ },
+ {
+  "id": "w-09",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kuku"
+ },
+ {
+  "id": "w-10",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "shamba"
+ },
+ {
+  "id": "w-11",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "mvua"
+ },
+ {
+  "id": "w-12",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "jua"
+ },
+ {
+  "id": "w-13",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "moto"
+ },
+ {
+  "id": "w-14",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "mti"
+ },
+ {
+  "id": "w-15",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "mto"
+ },
+ {
+  "id": "w-16",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "ziwa"
+ },
+ {
+  "id": "w-17",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "njia"
+ },
+ {
+  "id": "w-18",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "soko"
+ },
+ {
+  "id": "w-19",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "pesa"
+ },
+ {
+  "id": "w-20",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "shule"
+ },
+ {
+  "id": "w-21",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "mwalimu"
+ },
+ {
+  "id": "w-22",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "daktari"
+ },
+ {
+  "id": "w-23",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "rafiki"
+ },
+ {
+  "id": "w-24",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "jirani"
+ },
+ {
+  "id": "w-25",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kijiji"
+ },
+ {
+  "id": "w-26",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "asubuhi"
+ },
+ {
+  "id": "w-27",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "jioni"
+ },
+ {
+  "id": "w-28",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "usiku"
+ },
+ {
+  "id": "w-29",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "leo"
+ },
+ {
+  "id": "w-30",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kesho"
+ },
+ {
+  "id": "w-31",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "jana"
+ },
+ {
+  "id": "w-32",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kula"
+ },
+ {
+  "id": "w-33",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kunywa"
+ },
+ {
+  "id": "w-34",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kulala"
+ },
+ {
+  "id": "w-35",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kwenda"
+ },
+ {
+  "id": "w-36",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kuja"
+ },
+ {
+  "id": "w-37",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kuona"
+ },
+ {
+  "id": "w-38",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kusikia"
+ },
+ {
+  "id": "w-39",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kusema"
+ },
+ {
+  "id": "w-40",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kufanya kazi"
+ },
+ {
+  "id": "w-41",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kubwa"
+ },
+ {
+  "id": "w-42",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "ndogo"
+ },
+ {
+  "id": "w-43",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "nzuri"
+ },
+ {
+  "id": "w-44",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "mbaya"
+ },
+ {
+  "id": "w-45",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "moja"
+ },
+ {
+  "id": "w-46",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "mbili"
+ },
+ {
+  "id": "w-47",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "tatu"
+ },
+ {
+  "id": "w-48",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "kumi"
+ },
+ {
+  "id": "w-49",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "ndiyo"
+ },
+ {
+  "id": "w-50",
+  "type": "word",
+  "topic": "maneno",
+  "sw": "hapana"
+ }
+]
