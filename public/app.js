@@ -10,6 +10,37 @@
   let speaker = store.get('sukuma_speaker');
   let prompt = null;
   let recorder = null, chunks = [], blob = null, stream = null, timer = null, startedAt = 0, seconds = 0;
+  // Microphone level meter: catches recordings where no sound reached the microphone.
+  const QUIET = 0.02; // peak below this (about -34 dB) means nothing was heard
+  let meter = null, quietTries = 0, hitCap = false;
+  function startMeter() {
+    try {
+      const Ctx = window.AudioContext || window.webkitAudioContext;
+      const ctx = new Ctx();
+      const analyser = ctx.createAnalyser();
+      analyser.fftSize = 4096;
+      ctx.createMediaStreamSource(stream).connect(analyser);
+      if (ctx.state === 'suspended') ctx.resume().catch(() => {});
+      const buf = new Float32Array(analyser.fftSize);
+      meter = { ctx, peak: 0, reads: 0 };
+      meter.timer = setInterval(() => {
+        if (ctx.state !== 'running') return; // cannot measure: never blame the speaker
+        analyser.getFloatTimeDomainData(buf);
+        let m = 0;
+        for (let i = 0; i < buf.length; i++) { const v = Math.abs(buf[i]); if (v > m) m = v; }
+        if (m > meter.peak) meter.peak = m;
+        meter.reads++;
+      }, 80);
+    } catch { meter = null; }
+  }
+  // true = heard nothing, false = heard sound, null = could not measure
+  function stopMeter() {
+    if (!meter) return null;
+    clearInterval(meter.timer);
+    const m = meter; meter = null;
+    m.ctx.close().catch(() => {});
+    return m.reads >= 5 ? m.peak < QUIET : null;
+  }
 
   const views = ['welcome', 'about', 'task', 'done'];
   function show(name) {
@@ -103,6 +134,7 @@
     recorder = new MediaRecorder(stream, type ? { mimeType: type, audioBitsPerSecond: 48000 } : undefined);
     recorder.ondataavailable = (e) => e.data.size && chunks.push(e.data);
     recorder.onstop = () => {
+      const quiet = stopMeter();
       stream.getTracks().forEach((t) => t.stop());
       clearInterval(timer);
       seconds = (Date.now() - startedAt) / 1000;
@@ -112,10 +144,24 @@
       $('rec-btn-text').textContent = 'Rekodi tena';
       $('rec-btn').setAttribute('aria-pressed', 'false');
       $('rec-btn').classList.remove('on');
-      $('rec-status').textContent = seconds < 0.7 ? 'Rekodi ni fupi mno. Jaribu tena.' : 'Imerekodiwa. Sikiliza, kisha tuma.';
-      if (seconds < 0.7) blob = null;
+      if (seconds < 0.7) {
+        blob = null;
+        $('rec-status').textContent = 'Rekodi ni fupi mno. Jaribu tena.';
+      } else if (quiet === true && ++quietTries < 3) {
+        // Nothing was heard. Do not accept it (after three tries we stop insisting, in case the meter is wrong).
+        blob = null;
+        $('rec-play').hidden = true;
+        $('rec-status').textContent = 'Hatukusikia sauti yoyote. Angalia kipaza sauti cha simu yako, sogeza simu karibu na mdomo, kisha rekodi tena.';
+      } else {
+        if (quiet === false) quietTries = 0;
+        $('rec-status').textContent = hitCap
+          ? 'Rekodi imesimama yenyewe baada ya sekunde 40. Sikiliza: kama ina maneno mengine, rekodi tena na ubonyeze Simamisha ukimaliza.'
+          : 'Imerekodiwa. Sikiliza, kisha tuma.';
+      }
     };
     recorder.start();
+    startMeter();
+    hitCap = false;
     startedAt = Date.now();
     $('rec-btn-text').textContent = 'Simamisha';
     $('rec-btn').setAttribute('aria-pressed', 'true');
@@ -124,7 +170,7 @@
     timer = setInterval(() => {
       const s = (Date.now() - startedAt) / 1000;
       $('rec-time').textContent = fmt(s);
-      if (s >= MAX_SECONDS) recorder.stop();
+      if (s >= MAX_SECONDS && recorder.state === 'recording') { hitCap = true; recorder.stop(); }
     }, 250);
   }
   $('rec-btn').addEventListener('click', () => {
